@@ -92,12 +92,15 @@ function enviarMensagem() {
     axios.post(urlMensagens, novaMensagem)
         .then(response => {
             console.log("Mensagem enviada com sucesso!", response);
-            renderizarMensagem(novaMensagem.from, novaMensagem.to, novaMensagem.text, novaMensagem.type, formatarHora());
+            if (tipo === "private_message") {
+                renderizarMensagem(novaMensagem.from, novaMensagem.to, novaMensagem.text, novaMensagem.type, formatarHora());
+            } else {
+                renderizarMensagem(novaMensagem.from, novaMensagem.to, novaMensagem.text, novaMensagem.type, formatarHora());
+            }
         })
         .catch(error => {
             console.log("Erro ao enviar mensagem:", error);
         });
-
 
     input.value = "";
 }
@@ -122,10 +125,7 @@ function renderizarMensagem(from, to, text, type, time) {
     }
 
     ul.appendChild(li);
-    const elementosQueQueroQueApareca = document.querySelectorAll('li');
-    elementosQueQueroQueApareca.forEach(elemento => {
-    elemento.scrollIntoView();
-});
+    li.scrollIntoView();
 }
 
 document.querySelector(".icon-aviao").addEventListener("click", enviarMensagem);
