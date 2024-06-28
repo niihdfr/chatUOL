@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <title>Bate Papo UOL</title>
+</head>
+<body>
+    <div class="app">
+        <header>
+            <div class="logo"><img src="assets/logo-uol.png" alt="Logo UOL"></div>
+            <div class="icone-pessoas" onclick="abrirMenu()">
+                <ion-icon name="people"></ion-icon>
+            </div>
+        </header>
+        
+        <div id="menuLateral" class="menu-lateral escondido">
+
+            <span class="span-escolha-contato">Escolha um contato<br> para enviar mensagem:</span>
+            <ul class="lista-usuarios">
+                <li class="span-publico" id="opcaoTodos" onclick="marcarUsuario(this)">
+                    <ion-icon name="people"></ion-icon>
+                    Todos
+                    <ion-icon name="checkmark-sharp" class="check"></ion-icon>
+                </li>
+            </ul>
+
+            <div class="div-visibilidade">
+                <span class="span-escolha-visib">Escolha a visibilidade</span>
+                <span class="span-publico" id="opcaoPublico" onclick="marcarOpcao('opcaoPublico')">
+                    <ion-icon name="lock-open"></ion-icon> 
+                    Público
+                    <ion-icon name="checkmark-sharp" class="check escondido"></ion-icon>
+                </span>
+                <span class="span-priv" id="opcaoPrivado" onclick="marcarOpcao('opcaoPrivado')">
+                    <ion-icon name="lock-open"></ion-icon>
+                    Reservadamente
+                    <ion-icon name="checkmark-sharp" class="check escondido"></ion-icon>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="espaco-mensagens">
+            <ul class="mensagem"></ul>
+        </div>
+
+        <footer>
+            <div class="box-footer">
+                <div class="texto-enviar-mensagem">
+                    <input type="text" class="enviar-mensagem" placeholder="Escreva aqui...">
+                    <span>Enviando para </span>
+                </div>
+                <div class="icon-aviao">
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="overlay" class="overlay escondido" onclick="fecharMenu()"></div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

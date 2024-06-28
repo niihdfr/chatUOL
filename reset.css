@@ -1,0 +1,7 @@
+* {
+    box-sizing: border-box;
+    transition: all ease 0.2s;
+    margin: 0;
+    list-style-type: none;
+    font-family: 'Roboto', arial;
+}
