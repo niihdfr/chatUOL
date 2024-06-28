@@ -7,9 +7,7 @@ chatUOL é um projeto de chat em tempo real inspirado na interface e funcionalid
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação](#instalação)
-- [Como Usar](#como-usar)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+
 
 ## Funcionalidades
 
